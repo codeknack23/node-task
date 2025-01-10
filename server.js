@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+app.get("/",(req,res)=>{
+  res.status(200).end("Node API Server Running...")
+})
+
 app.post('/api/register', async (req, res) => {
   const { username, email, password } = req.body;
 
